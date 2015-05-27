@@ -73,13 +73,9 @@ public class Employee {
     };
 
     public static Comparator<Employee> PaymentComparator = (o1, o2) -> {
-        if (o1.getSalary() > o2.getSalary())
-            return -1;
-        else
-        if (o1.getSalary() < o2.getSalary())
-            return 1;
-        else
-            return 0;
+        int salary1 = (int) (o1.getSalary() * 100);
+        int salary2 = (int) (o2.getSalary() * 100);
+        return salary1 - salary2;
     };
 
     //Making a string from object's of attributes values
