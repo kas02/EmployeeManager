@@ -21,6 +21,7 @@ abstract public class EmployeeDataWindow {
         infVbox.setPadding(new Insets(10));
 
         Scene infScene = new Scene(infVbox, 300, 300);
+        infScene.getStylesheets().add("MyStyle.css");
         window.setScene(infScene);
         window.setResizable(false);
         window.show();

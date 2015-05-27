@@ -45,6 +45,7 @@ abstract public class Alert {
         borderPane.setBottom(hBoxBottom);
 
         Scene scene = new Scene(borderPane, 250, 100);
+        scene.getStylesheets().add("MyStyle.css");
         window.setScene(scene);
         window.setResizable(false);
         window.showAndWait();

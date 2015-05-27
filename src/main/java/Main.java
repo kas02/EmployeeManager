@@ -109,6 +109,7 @@ public class Main extends Application {
         borderPane.setRight(vBox);
 
         Scene navigationScene = new Scene(borderPane, 400, 400);
+        navigationScene.getStylesheets().add("MyStyle.css");
         mainWindow.setScene(navigationScene);
         mainWindow.show();
 
@@ -118,7 +119,7 @@ public class Main extends Application {
         });
 
     }
-
+    //reread data from database
     private void updateList() {
         DBHandler db = new DBHandler();
         employeesList = db.getList();
@@ -140,7 +141,7 @@ public class Main extends Application {
             choiceSort.setDisable(false);
         }
     }
-
+    //review list with selected sort type
     public void showList() {
         listView.getItems().remove(0, listView.getItems().size());
         switch (currentSort){
@@ -162,7 +163,6 @@ public class Main extends Application {
             listView.getItems().add(String.format("%s. %s", i++, anEmployeesList.toString()));
         }
         listView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-
     }
 
     private boolean showEmployeeData() {
@@ -194,7 +194,8 @@ public class Main extends Application {
             db.getConnection().close();
             updateList();
             showList();
-        } catch (Exception e){
+        }
+        catch (Exception e){
            showList();
         }
     }

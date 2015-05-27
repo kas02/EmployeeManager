@@ -83,6 +83,7 @@ abstract public class AddWindow {
 
         borderPane.setCenter(gridPane);
         Scene scene = new Scene(borderPane, 310, 300);
+        scene.getStylesheets().add("MyStyle.css");
         window.setScene(scene);
         window.setResizable(false);
         window.showAndWait();
